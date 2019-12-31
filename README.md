@@ -1,0 +1,2 @@
+# vuecli-scaffolding
+基于vuecli3改造一个base版本的脚手架统一开发模板
