@@ -70,6 +70,10 @@ export default [
     }
   },
   {
+    path: '/store',
+    component: () => import('@/views/Store.vue')
+  },
+  {
     path: '*',
     component: () => import('@/views/Error_404.vue')
   }
