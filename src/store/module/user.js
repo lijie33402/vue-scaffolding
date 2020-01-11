@@ -7,10 +7,17 @@ const getters = {
   }
 }
 const mutations = {
-  //
+  SET_USER_NAME (state, params) {
+    state.userName = params
+  }
 }
 const actions = {
-  //
+  async updateUserName ({ commit, state, rooState, dispatch }) {
+    dispatch('xxx', '')
+  },
+  xxx() {
+    //
+  }
 }
 
 export default {
