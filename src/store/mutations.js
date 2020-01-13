@@ -1,6 +1,9 @@
 import Vue from 'vue'
 
 const mutations = {
+  SET_STATE_VALUE (state, params) {
+    state.stateValue = params
+  },
   SET_APP_NAME (state, params) {
     state.appName = params
   },

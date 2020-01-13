@@ -1,7 +1,7 @@
 <template>
   <div>
-    <a-input v-model="inputValue" />
-    <p>{{ inputValue }} last letter is {{ inputValueLastLetter }}</p>
+    <a-input v-model="stateValue" />
+    <p>{{ stateValue }} last letter is {{ inputValueLastLetter }}</p>
     <a-show :content="inputValue" />
     <p>{{ appName }}, appNameWithVersion: {{ appNameWithVersion }}</p>
     <p>userName: {{ userName }}, firstLetter is {{ firstLetter }}</p>
@@ -30,6 +30,14 @@ export default {
     //   appName: state => state.appName,
     //   userName: state => state.user.userName,
     // }),
+    stateValue: {
+      get() {
+        return this.$store.state.stateValue
+      },
+      set(value) {
+        this.$store.commit('SET_STATE_VALUE', value)
+      }
+    },
     appName() {
       return this.$store.state.appName
     }, 
@@ -48,7 +56,7 @@ export default {
       return this.$store.state.user.userName
     },
     inputValueLastLetter() {
-      return this.inputValue.substr(-1, 1)
+      return this.stateValue.substr(-1, 1)
     }
   },
   methods: {
