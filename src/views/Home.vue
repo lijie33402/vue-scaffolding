@@ -5,12 +5,14 @@
     <p>{{ food }}</p>
     <button @click="handleClick('back')">back</button>
     <button @click="handleClick('push')">push parent</button>
+    <button @click="getInfo">请求数据</button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import { getUserInfo } from '@/api/user'
 
 export default {
   name: 'home',
@@ -44,6 +46,11 @@ export default {
           }
         })
       }
+    },
+    getInfo() {
+      getUserInfo({ userId: 123 }).then(res => {
+        console.log(res)
+      })
     }
   }
 }
