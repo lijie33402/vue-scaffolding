@@ -10,7 +10,7 @@ Mock.setup({
 })
 
 Random.extend({
-  fruit() {
+  fruit () {
     const fruit = ['apple', 'banana', 'berry']
     return this.pick(fruit)
   }

@@ -23,7 +23,7 @@ export default {
       default: 'apple'
     }
   },
-  data() {
+  data () {
     return {
       imgSrc: ''
     }
@@ -53,7 +53,7 @@ export default {
         })
       }
     },
-    getInfo() {
+    getInfo () {
       getUserInfo({ userId: 123 }).then(res => {
         console.log(res)
         this.imgSrc = res.data.img

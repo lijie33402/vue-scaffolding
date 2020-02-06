@@ -16,7 +16,7 @@ import AShow from '_c/AShow.vue'
 import { mapState } from 'vuex'
 export default {
   name: 'store',
-  data() {
+  data () {
     return {
       inputValue: ''
     }
@@ -31,36 +31,36 @@ export default {
     //   userName: state => state.user.userName,
     // }),
     stateValue: {
-      get() {
+      get () {
         return this.$store.state.stateValue
       },
-      set(value) {
+      set (value) {
         this.$store.commit('SET_STATE_VALUE', value)
       }
     },
-    appName() {
+    appName () {
       return this.$store.state.appName
-    }, 
-    appVersion() {
+    },
+    appVersion () {
       return this.$store.state.appVersion
-    }, 
+    },
     // 这个地方使用getters是因为这个值可能在多个组件中都会使用，在单个组件中其实就是computed作用一样
-    appNameWithVersion() {
+    appNameWithVersion () {
       return this.$store.getters.appNameWithVersion
     },
-    firstLetter() {
+    firstLetter () {
       // 模块中定义的getters和mutations都是直接全局用就可以，只有state需要加上模块名
       return this.$store.getters.firstLetter
     },
-    userName() {
+    userName () {
       return this.$store.state.user.userName
     },
-    inputValueLastLetter() {
+    inputValueLastLetter () {
       return this.stateValue.substr(-1, 1)
     }
   },
   methods: {
-    changeAppName() {
+    changeAppName () {
       // this.$store.commit('SET_APP_NAME', 'newAppName')
       this.$store.commit('SET_APP_VERSION')
       this.$store.commit('SET_USER_NAME', 'LIJIE')

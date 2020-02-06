@@ -6,11 +6,11 @@
 
 <script>
 export default {
-  mounted() {
+  mounted () {
     console.log(this.$bus)
   },
   methods: {
-    handleClick() {
+    handleClick () {
       this.$bus.$emit('on-click', 'hello')
     }
   }

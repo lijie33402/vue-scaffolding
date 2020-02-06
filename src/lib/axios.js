@@ -2,11 +2,11 @@ import axios from 'axios'
 import { baseURL } from '@/config'
 
 class HttpRequest {
-  constructor(baseUrl = baseURL) {
+  constructor (baseUrl = baseURL) {
     this.baseUrl = baseUrl
     this.queue = {}
   }
-  getInsideConfig() {
+  getInsideConfig () {
     const config = {
       baseUrl: this.baseUrl,
       headers: {
@@ -15,7 +15,7 @@ class HttpRequest {
     }
     return config
   }
-  interceptors(instance, url) {
+  interceptors (instance, url) {
     instance.interceptors.request.use(config => {
       // 添加全局loading
       if (!Object.keys(this.queue).length) {
@@ -36,7 +36,7 @@ class HttpRequest {
       return Promise.reject(error)
     })
   }
-  request(options) {
+  request (options) {
     const instance = axios.create()
     options = Object.assign(this.getInsideConfig(), options)
     console.log(options)

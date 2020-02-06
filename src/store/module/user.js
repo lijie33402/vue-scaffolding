@@ -15,7 +15,7 @@ const actions = {
   async updateUserName ({ commit, state, rooState, dispatch }) {
     dispatch('xxx', '')
   },
-  xxx() {
+  xxx () {
     //
   }
 }

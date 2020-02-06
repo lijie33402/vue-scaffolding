@@ -6,14 +6,14 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       message: ''
     }
   },
-  mounted() {
+  mounted () {
     this.$bus.$on('on-click', mes => {
-      this.message = mes;
+      this.message = mes
     })
   }
 }
