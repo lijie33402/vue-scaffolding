@@ -26,10 +26,10 @@ class HttpRequest {
     }, error => {
       return Promise.reject(error)
     })
-    instance.interceptors.response.use(config => {
+    instance.interceptors.response.use(res => {
       console.log(res)
       delete this.queue[url]
-      const { data, satus } = res
+      const { data, status } = res
       return { data, status }
     }, error => {
       delete this.queue[url]
@@ -39,6 +39,7 @@ class HttpRequest {
   request(options) {
     const instance = axios.create()
     options = Object.assign(this.getInsideConfig(), options)
+    console.log(options)
     this.interceptors(instance, options.url)
     return instance(options)
   }

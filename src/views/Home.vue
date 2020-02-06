@@ -6,6 +6,7 @@
     <button @click="handleClick('back')">back</button>
     <button @click="handleClick('push')">push parent</button>
     <button @click="getInfo">请求数据</button>
+    <img :src="imgSrc" />
   </div>
 </template>
 
@@ -20,6 +21,11 @@ export default {
     food: {
       type: String,
       default: 'apple'
+    }
+  },
+  data() {
+    return {
+      imgSrc: ''
     }
   },
   components: {
@@ -50,6 +56,7 @@ export default {
     getInfo() {
       getUserInfo({ userId: 123 }).then(res => {
         console.log(res)
+        this.imgSrc = res.data.img
       })
     }
   }

@@ -2,4 +2,4 @@
 // 否则在这里设置好代理url
 export const baseURL = process.env.NODE_ENV === 'production'
  ? 'http://production_address.com'
- : 'http://localhost:3000'
+ : ''
