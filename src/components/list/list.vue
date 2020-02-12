@@ -30,6 +30,9 @@ export default {
     handleMove (event) {
       event.preventDefault()
     }
+  },
+  mounted () {
+    console.log(!this.render)
   }
 }
 </script>

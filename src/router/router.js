@@ -58,6 +58,11 @@ export default [
     component: () => import('@/views/RenderPage.vue'),
   },
   {
+    path: '/menu_page',
+    name: 'menu_page',
+    component: () => import('@/views/MenuPage.vue')
+  },
+  {
     path: '/parent',
     name: 'parent',
     component: () => import('@/views/Parent.vue'),
