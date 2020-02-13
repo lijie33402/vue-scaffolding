@@ -63,6 +63,17 @@ export default [
     component: () => import('@/views/MenuPage.vue')
   },
   {
+    path: '/layout',
+    name: 'layout',
+    component: () => import('@/views/Layout.vue'),
+    children: [
+      {
+        path: 'home',
+        component: Home
+      }
+    ]
+  },
+  {
     path: '/parent',
     name: 'parent',
     component: () => import('@/views/Parent.vue'),
