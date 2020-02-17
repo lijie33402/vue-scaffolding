@@ -1,9 +1,11 @@
 import Mock from 'mockjs'
 import { getUserInfo } from './response/user'
+import { getTableData } from './response/data'
 
 const Random = Mock.Random
 
 Mock.mock('/getUserInfo', getUserInfo)
+Mock.mock('/getTableData', getTableData)
 
 Mock.setup({
   timeout: 500

@@ -74,6 +74,11 @@ export default [
     ]
   },
   {
+    path: '/edit_table',
+    name: 'edit_table',
+    component: () => import('@/views/EditTable.vue')
+  },
+  {
     path: '/parent',
     name: 'parent',
     component: () => import('@/views/Parent.vue'),
